@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"math"
 	"math/big"
-	"strconv"
 )
 
 const targetBits = 24
@@ -72,8 +71,4 @@ func (pow *ProofOfWork) Validate() bool {
     isValid := hashInt.Cmp(pow.target) == -1
 
     return isValid
-}
-
-func IntToHex(n int64) []byte {
-    return []byte(strconv.FormatInt(n, 16))
 }
